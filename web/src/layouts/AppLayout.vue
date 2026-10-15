@@ -6,12 +6,10 @@ import { useAuthStore } from '../stores/auth.js'
 const auth = useAuthStore()
 const router = useRouter()
 
-// Nav nyata hanya yang sudah ada rutenya; sisanya nonaktif sampai TODO-nya dikerjakan.
+// Nav repo ini: hanya yang ada rutenya (scope = form OTP saja).
 const nav = [
-  { to: '/', label: 'Beranda' },
-  { label: 'Barang Masuk', soon: true },
-  { label: 'Master Data', soon: true },
-  { label: 'Manajemen User', soon: true },
+  { to: '/', label: 'Generate OTP' },
+  { to: '/login', label: 'Masuk', guestOnly: true },
 ]
 
 const badgeClass = computed(() =>
@@ -31,15 +29,12 @@ async function signOut() {
       <nav class="flex-1 space-y-1 p-3">
         <template v-for="item in nav" :key="item.label">
           <RouterLink
-            v-if="item.to" :to="item.to"
+            v-if="item.to && (!item.guestOnly || !auth.isAuthenticated)" :to="item.to"
             class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100"
             active-class="bg-slate-900 text-white hover:bg-slate-900"
           >
             {{ item.label }}
           </RouterLink>
-          <span v-else class="block rounded-lg px-3 py-2 text-sm text-slate-400">
-            {{ item.label }} <small class="ml-1 rounded bg-slate-100 px-1">segera</small>
-          </span>
         </template>
       </nav>
       <div class="border-t p-3 text-sm">
