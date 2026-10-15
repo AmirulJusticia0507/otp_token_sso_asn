@@ -1,4 +1,6 @@
 .totp-secret
 .dev-cookies
 kredensial-lokal.md
+web/dist/
+web/.env
 node_modules/
