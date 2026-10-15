@@ -5,7 +5,7 @@ import axios from 'axios'
 export const MEDIA_TYPE = 'application/vnd.api+json'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:8108',
+  baseURL: import.meta.env?.VITE_BACKEND_URL ?? 'http://localhost:8108',
   withCredentials: true,
   headers: { Accept: MEDIA_TYPE, 'Content-Type': MEDIA_TYPE },
 })
