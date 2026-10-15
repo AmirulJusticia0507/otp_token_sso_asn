@@ -3,6 +3,7 @@ import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAuthStore } from './stores/auth.js'
 import AppLayout from './layouts/AppLayout.vue'
+import Toaster from './components/Toaster.vue'
 
 // T-02.3: halaman publik (login) polos; selebihnya di dalam layout + guard.
 const auth = useAuthStore()
@@ -23,4 +24,5 @@ onMounted(() => {
       <RouterView />
     </main>
   </div>
+  <Toaster />
 </template>
