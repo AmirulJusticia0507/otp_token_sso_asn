@@ -19,7 +19,8 @@ T-05 s/d T-11 (Kategori, Sub Kategori, User, Barang Masuk) milik proyek lain
 - [x] T-03.2 CurrencyInput/DatePicker/FileUpload
 - [x] T-03.3 Modal/DataTable/Pagination/EmptyState/Toast + usePagination/useToast
 - [x] T-04 form Login SSO (username+password+TOTP via Direct Access Grant)
-- [ ] T-OTP.1 halaman form Generate kode OTP (klik tombol -> kode muncul)
+- [x] T-OTP.1 halaman form Generate kode OTP (klik tombol -> kode muncul)
+- [x] PWA: installable + offline (vite-plugin-pwa, SW auto-update, ikon generated)
 
 ## T-OTP.1: halaman form Generate kode OTP
 
